@@ -56,8 +56,7 @@ function Modal({show, onClose}) {
     }
   }
     return (
-        <div style={{display: show ? 'block' : 'none'}}>
-        <div className="modal modal-main" onClick={handleOutsideClick}>
+       show&&<div className="modal modal-main" onClick={handleOutsideClick}>
             <div className="modal-content">
             <h2>Fill Details</h2>
             <form onSubmit={handleSubmit}>
@@ -72,7 +71,6 @@ function Modal({show, onClose}) {
                 <button className="submit-button" type='submit'>Submit</button>
             </form>
             </div>
-        </div>
         </div>
     )
 }
