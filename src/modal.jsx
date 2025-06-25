@@ -27,22 +27,20 @@ function Modal({show, onClose}) {
       alert("Please fill out the email field.");
       return;
     }
-    if (!dob) {
-      alert("Please fill out the Date of Birth field.");
+    if (!email.includes('@')) {
+      alert("Invalid email. Please check your email address.");
       return;
     }
     if (!phone) {
       alert("Please fill out the phone field.");
       return;
     }
-
-    if (!email.includes('@')) {
-      alert("Invalid email. Please check your email address.");
-      return;
-    }
-
     if (phone.length !== 10 || isNaN(phone)) {
       alert("Invalid phone number. Please enter a 10-digit phone number.");
+      return;
+    }
+    if (!dob) {
+      alert("Please fill out the Date of Birth field.");
       return;
     }
 
@@ -52,6 +50,7 @@ function Modal({show, onClose}) {
       alert("Invalid date of birth. Please enter a valid date.");
       return;
     }
+    
   setForm({ username: '', email: '', dob: '', phone: '' });
   };
 
@@ -64,16 +63,16 @@ function Modal({show, onClose}) {
         <div className="modal modal-main" style={{display: show ? 'block' : 'none'}} onClick={handleOutsideClick}>
             <div className="modal-content">
             <h2>Fill Details</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
-                <input type="text" id='username' required value={form.username} onChange={handleChange}/>
+                <input type="text" id='username' value={form.username} onChange={handleChange}/>
                 <label htmlFor="email">Email Address:</label>
-                <input type="email" id='email' required value={form.email} onChange={handleChange}/>
+                <input type="email" id='email' value={form.email} onChange={handleChange}/>
                 <label htmlFor="phone">Phone Number:</label>
-                <input type="tel" id='phone' required  value={form.phone} onChange={handleChange}/>
+                <input type="tel" id='phone'  value={form.phone} onChange={handleChange}/>
                 <label htmlFor="dob">Date Of Birth:</label>
-                <input type="date" id='dob' required value={form.dob} onChange={handleChange}/>
-                <button onClick={(e)=>handleSubmit(e)}>Submit</button>
+                <input type="date" id='dob' value={form.dob} onChange={handleChange}/>
+                <button type='submit'>Submit</button>
             </form>
             </div>
         </div>
