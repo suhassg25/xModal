@@ -67,12 +67,12 @@ function Modal({show, onClose}) {
                 <label htmlFor="username">Username:</label>
                 <input type="text" id='username' value={form.username} onChange={handleChange}/>
                 <label htmlFor="email">Email Address:</label>
-                <input type="email" id='email' value={form.email} onChange={handleChange}/>
+                <input type="text" id='email' value={form.email} onChange={handleChange}/>
                 <label htmlFor="phone">Phone Number:</label>
                 <input type="tel" id='phone'  value={form.phone} onChange={handleChange}/>
                 <label htmlFor="dob">Date Of Birth:</label>
                 <input type="date" id='dob' value={form.dob} onChange={handleChange}/>
-                <button type='submit'>Submit</button>
+                <button className="submit-button" type='submit'>Submit</button>
             </form>
             </div>
         </div>
