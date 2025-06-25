@@ -19,10 +19,10 @@ function Modal({show, onClose}) {
     e.preventDefault();
     const { username, email, dob, phone } = form;
 
-    if (!username) {
+   /* if (!username) {
       alert("Please fill out the username field.");
       return;
-    }
+    } */
     if (!email) {
       alert("Please fill out the email field.");
       return;
