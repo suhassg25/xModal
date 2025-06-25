@@ -6,14 +6,13 @@ function App() {
 
   const [showModal, setShowModal] = useState(false)
   
-
   return (
     <div>
       <div className="main">
         <h1>User Details Modal</h1>
         <button style={{ color: 'white', background: 'blue' }} onClick={()=>setShowModal(true)}>Open Form</button>
       </div>
-      <Modal show={showModal}/>
+      <Modal show={showModal} onClose={()=>setShowModal(false)}/>
     </div>
   )
 }

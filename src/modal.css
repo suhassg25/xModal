@@ -11,8 +11,9 @@
 }
 .modal-content{
     background-color: #fff;
-    margin-top: 150px;
-    margin-left: 30%;
+    position: relative;
+    top: 150px;
+    left: 30%;
     border-radius: 8px;
     padding: 0 10px 10px 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
